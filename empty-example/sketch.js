@@ -142,8 +142,9 @@ let h;
 let fishNum;
 let lost;
 
+
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(windowWidth, windowHeight);
 
   nemo = new fish(width/2, height/2, 0, 0, 10, false, color(190,0,255), 1);
   
