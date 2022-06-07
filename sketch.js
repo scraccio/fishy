@@ -142,63 +142,63 @@ let h;
 let fishNum;
 let lost;
 
+noLoop();
+
+let div = document.createElement('div');
+div.id = 'instructionsDiv';
+div.style.backgroundColor = 'rgb(240, 240, 240)';
+div.style.boxShadow = '3px 3px 10px rgb(14, 14, 14)';
+div.style.position = 'absolute';
+div.style.width = '700px';
+div.style.height = '300px';
+div.style.top = '50%';
+div.style.left = '50%';
+div.style.transform = 'translate(-50%,-50%)';
+div.style.borderRadius = '5px';
+document.body.appendChild(div);
+
+let instructions = document.createElement('div');
+instructions.id = 'instructions';
+instructions.textContent = 'Press the \'WASD\' keys to move, eat smaller fishes to grow!';
+instructions.style.fontSize = '30px';
+instructions.style.fontFamily = 'Sans-serif';
+instructions.style.textAlign = 'center';
+instructions.style.color = 'rgb(14, 14, 14)';
+instructions.style.position = 'absolute';
+instructions.style.width = '500px';
+instructions.style.top = '40%';
+instructions.style.left = '50%';
+instructions.style.transform = 'translate(-50%,-50%)';
+instructions.style.userSelect = 'none';
+div.appendChild(instructions);
+
+let confirm = document.createElement('div');
+confirm.id = 'confirm';
+confirm.textContent = 'Gotcha!';
+confirm.style.backgroundColor = 'rgb(240, 240, 240)';
+confirm.style.boxShadow = '3px 3px 10px rgb(14, 14, 14)';
+confirm.style.fontSize = '20px';
+confirm.style.fontFamily = 'Sans-serif';
+confirm.style.position = 'absolute';
+confirm.style.textAlign = 'center';
+confirm.style.userSelect = 'none';
+confirm.style.width = '80px';
+confirm.style.height = '30px';
+confirm.style.top = '75%';
+confirm.style.left = '50%';
+confirm.style.transform = 'translate(-50%,-50%)';
+confirm.style.borderRadius = '5px';
+confirm.addEventListener('click', ()=>{
+  div.remove();
+  loop();
+});
+div.appendChild(confirm);
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
   nemo = new fish(width/2, height/2, 0, 0, 10, false, color(190,0,255), 1);
-
-  noLoop();
-
-  let div = document.createElement('div');
-  div.id = 'instructionsDiv';
-  div.style.backgroundColor = 'rgb(240, 240, 240)';
-  div.style.boxShadow = '3px 3px 10px rgb(14, 14, 14)';
-  div.style.position = 'absolute';
-  div.style.width = '700px';
-  div.style.height = '300px';
-  div.style.top = '50%';
-  div.style.left = '50%';
-  div.style.transform = 'translate(-50%,-50%)';
-  div.style.borderRadius = '5px';
-  document.body.appendChild(div);
-  
-  let instructions = document.createElement('div');
-  instructions.id = 'instructions';
-  instructions.textContent = 'Press the \'WASD\' keys to move, eat smaller fishes to grow!';
-  instructions.style.fontSize = '30px';
-  instructions.style.fontFamily = 'Sans-serif';
-  instructions.style.textAlign = 'center';
-  instructions.style.color = 'rgb(14, 14, 14)';
-  instructions.style.position = 'absolute';
-  instructions.style.width = '500px';
-  instructions.style.top = '40%';
-  instructions.style.left = '50%';
-  instructions.style.transform = 'translate(-50%,-50%)';
-  instructions.style.userSelect = 'none';
-  div.appendChild(instructions);
-
-  let confirm = document.createElement('div');
-  confirm.id = 'confirm';
-  confirm.textContent = 'Gotcha!';
-  confirm.style.backgroundColor = 'rgb(240, 240, 240)';
-  confirm.style.boxShadow = '3px 3px 10px rgb(14, 14, 14)';
-  confirm.style.fontSize = '20px';
-  confirm.style.fontFamily = 'Sans-serif';
-  confirm.style.position = 'absolute';
-  confirm.style.textAlign = 'center';
-  confirm.style.userSelect = 'none';
-  confirm.style.width = '80px';
-  confirm.style.height = '30px';
-  confirm.style.top = '75%';
-  confirm.style.left = '50%';
-  confirm.style.transform = 'translate(-50%,-50%)';
-  confirm.style.borderRadius = '5px';
-  confirm.addEventListener('click', ()=>{
-    div.remove();
-    loop();
-  });
-  div.appendChild(confirm);
 
   up = false;
   down = false;
