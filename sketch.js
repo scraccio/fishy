@@ -146,6 +146,7 @@ noLoop();
 
 let div = document.createElement('div');
 div.id = 'instructionsDiv';
+console.log('sus');
 div.style.backgroundColor = 'rgb(240, 240, 240)';
 div.style.boxShadow = '3px 3px 10px rgb(14, 14, 14)';
 div.style.position = 'absolute';
